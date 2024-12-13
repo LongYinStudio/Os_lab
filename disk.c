@@ -130,9 +130,31 @@ int main() {
     }
     printf("请输入当前磁道号：     ");
     scanf("%d", &begin);
-    FCFS();
-    SSTF();
-    SCAN();
-    CSCAN();
+    char choice;
+    while (1) {
+        printf("\n󰋊 磁盘算法:\033[32mf\033[0m:FCFS \033[36ms\033[0m:SSTF \033[33mS\033[0m:SCAN \033[33mc\033[0m:CSCAN\n");
+        printf("请输入您的选择: ");
+        scanf("%s", &choice);
+        switch (choice) {
+        case 'f': {
+            FCFS();
+            break;
+        }
+        case 's': {
+            SSTF();
+            break;
+        }
+        case 'S': {
+            SCAN();
+            break;
+        }
+        case 'c': {
+            CSCAN();
+            break;
+        }
+        default:
+            printf("无效选择，请重新输入.\n");
+        }
+    }
     return 0;
 }
